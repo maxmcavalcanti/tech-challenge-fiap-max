@@ -1,0 +1,19 @@
+{
+  "name": "fiap-project",
+  "version": "1.0.0",
+  "description": "FIAP PROJECT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "prisma": "^4.16.1",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.16.1"
+  }
+}
