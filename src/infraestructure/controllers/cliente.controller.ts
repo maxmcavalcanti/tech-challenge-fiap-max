@@ -9,6 +9,12 @@ class ClienteController {
     try {
       const { nome, email, cpf, endereco } = req.body
 
+      const alreadyRegister = await prisma.cliente.findFirst({ where: { cpf } })
+
+      if (alreadyRegister) {
+        res.status(400).json({ message: 'Usuário já cadastrado!' })
+      }
+
       const cliente = await prisma.cliente.create({
         data: {
           nome,
@@ -43,7 +49,7 @@ class ClienteController {
       })
 
       if (!cliente) {
-        return res.status(404).json({ message: 'Cliente não encontrado.' })
+        return res.status(404).json({ message: 'Cliente não encontrado!' })
       }
 
       res.json(cliente)

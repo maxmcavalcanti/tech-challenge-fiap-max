@@ -5,18 +5,18 @@ FROM node:14
 WORKDIR /app
 
 # Copie os arquivos package.json e package-lock.json para o diretório de trabalho
-COPY package*.json ./
+COPY package*.json /app
 
 # Instale as dependências da aplicação
 RUN npm install
 
-RUN npm install -g ts-node-dev
-
 # Copie o restante dos arquivos para o diretório de trabalho
-COPY . .
+COPY . /app
 
 # Expõe a porta 3000 do contêiner
 EXPOSE 3000
+
+RUN npm install -g ts-node
 
 # Define o comando padrão a ser executado quando o contêiner for iniciado
 CMD ["npm", "start"]
