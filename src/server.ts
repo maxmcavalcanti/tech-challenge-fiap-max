@@ -3,8 +3,11 @@ import clienteRoutes from './infraestructure/routes/cliente.routes';
 import funcionarioRoutes from './infraestructure/routes/funcionario.routes';
 import pedidoRoutes from './infraestructure/routes/pedido.routes';
 import produtoRoutes from './infraestructure/routes/produto.routes';
+import swaggerConfig from './../swaggerConfig';
+import router from './infraestructure/routes/router';
 
 const app = express();
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -23,4 +26,6 @@ app.listen(port, () => {
   console.log(`Servidor iniciado na porta ${port}`);
 })
 
+// Configuração do Swagger
+swaggerConfig(app, router);
 export default app

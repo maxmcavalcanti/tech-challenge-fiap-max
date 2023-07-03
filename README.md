@@ -1,66 +1,47 @@
-Entidades:
+# Aplicação Tech Challenge
 
-Cliente:
+Esta é uma aplicação web desenvolvida para a pós-graduação da FIAP em Arquitetura de Software. Tem como objetivo gerenciar pedidos e produtos de uma lanchonete.
 
-Descrição: Representa um cliente da lanchonete.
-Atributos: nome, e-mail, CPF.
-Produto:
+## Pré-requisitos
 
-Descrição: Representa um item disponível para pedido na lanchonete.
-Atributos: nome, descrição, preço, categoria.
-Pedido:
+Antes de executar a aplicação, certifique-se de ter os seguintes itens instalados:
 
-Descrição: Representa um pedido realizado pelo cliente.
-Atributos: cliente, itens do pedido, status, método de pagamento.
-Funcionário:
+- Node.js (v14 ou superior)
+- Docker
 
-Descrição: Representa um funcionário da lanchonete.
-Atributos: nome, cargo, login, senha.
-Categoria:
+## Primeiros Passos
 
-Descrição: Representa as categorias de produtos disponíveis na lanchonete.
-Atributos: nome.
-ItemPedido:
+1. Clone o repositório:
 
-Descrição: Representa um item específico dentro de um pedido.
-Atributos: produto, quantidade, preço unitário.
-Cozinha:
+```bash
+   git clone https://github.com/seu-usuario/tech-challenge-app.git
+```
 
-Descrição: Representa a área responsável pelo preparo dos pedidos na lanchonete.
-TabelaPedidos:
+Acesse o diretório do projeto:
 
-Descrição: Representa a tabela onde os pedidos são exibidos para a cozinha e atendentes acompanharem o status e andamento.
-Casos de Uso:
+```bash
+cd tech-challenge-app
+```
 
-Realizar Pedido:
+Instale as dependências:
 
-Descrição: Permite que um cliente faça um pedido de lanches, acompanhamentos, bebidas e sobremesas.
-Fluxo:
-O cliente seleciona os produtos desejados, especificando a quantidade e possíveis personalizações.
-O cliente realiza o pagamento do pedido utilizando o QRCode do Mercado Pago.
-O pedido é registrado no sistema, associado ao cliente, aos produtos selecionados e ao método de pagamento.
-Acompanhar Pedido:
+```bash
+npm install
+```
 
-Descrição: Permite que o cliente acompanhe o progresso do seu pedido.
-Fluxo:
-O cliente visualiza o status do pedido, que pode estar em uma das seguintes etapas: recebido, em preparação, pronto, finalizado.
-Gerenciar Clientes:
+Inicie os containers Docker (banco de dados e aplicação):
 
-Descrição: Permite ao estabelecimento cadastrar, editar e remover informações dos clientes.
-Fluxo:
-O estabelecimento pode cadastrar novos clientes, fornecendo nome, e-mail e CPF.
-O estabelecimento pode editar as informações de clientes existentes.
-O estabelecimento pode remover clientes do sistema.
-Gerenciar Produtos e Categorias:
+```bash
+docker-compose up -d
+```
+A aplicação agora está em execução em http://localhost:3000.
 
-Descrição: Permite ao estabelecimento cadastrar, editar e remover produtos e categorias.
-Fluxo:
-O estabelecimento cadastra novos produtos, fornecendo nome, descrição, preço e categoria.
-O estabelecimento pode editar as informações de produtos existentes.
-O estabelecimento pode remover produtos do sistema.
-O estabelecimento pode cadastrar novas categorias de produtos.
-O estabelecimento pode editar as informações de categorias existentes.
-O estabelecimento pode remover categorias do sistema.
-Acompanhar Pedidos em Andamento:
+Uso
+Para entender a utilização de cada rota leia a documentação do postman:
 
-Descrição: Permite ao estabelecimento visualizar os pedidos em andamento e o
+[https://documenter.getpostman.com/view/20666116/2s93zCagbA]
+
+*está sendo desenvolvida a documentação via swagger*
+
+Licença
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
