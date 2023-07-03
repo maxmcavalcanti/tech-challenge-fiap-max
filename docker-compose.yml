@@ -1,5 +1,11 @@
 version: '4.2'
 services:
+  app:
+    image: maxmcavalcanti/max-tech-app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
   db:
     image: postgres
     restart: always
