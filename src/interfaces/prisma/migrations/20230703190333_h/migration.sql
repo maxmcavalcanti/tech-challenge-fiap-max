@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Pedido" ADD COLUMN     "totalValue" DOUBLE PRECISION NOT NULL DEFAULT 0;

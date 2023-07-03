@@ -1,12 +1,12 @@
 import { Produto } from "./produto";
 
 export class ItemPedido {
-    public produto: Produto;
+    public productId: string;
     public quantidade: number;
     public precoUnitario: number;
 
-    constructor(produto: Produto, quantidade: number, precoUnitario: number) {
-        this.produto = produto;
+    constructor(productId: string, quantidade: number, precoUnitario: number) {
+        this.productId = productId;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
     }
