@@ -44,5 +44,3 @@ Para entender a utilização de cada rota leia a documentação do postman:
 *está sendo desenvolvida a documentação via swagger*
 Ao acessar a [http://localhost:3000/api-docs/] é possível visualizar a documentação das rotas para *Clientes*
 
-Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
