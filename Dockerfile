@@ -1,22 +1,17 @@
-# Use a base image do Node.js
-FROM node:14
+FROM node:14 AS builder
 
-# Defina o diretório de trabalho no contêiner
+# Create app directory
 WORKDIR /app
 
-# Copie os arquivos package.json e package-lock.json para o diretório de trabalho
-COPY package*.json /app
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+COPY package*.json ./
+COPY prisma ./prisma/
 
-# Instale as dependências da aplicação
+# Install app dependencies
 RUN npm install
 
-# Copie o restante dos arquivos para o diretório de trabalho
-COPY . /app
+COPY . .
 
-# Expõe a porta 3000 do contêiner
 EXPOSE 3000
-
-RUN npm install -g ts-node
-
-# Define o comando padrão a ser executado quando o contêiner for iniciado
-CMD ["npm", "start"]
+# 👇 new migrate and start app script
+CMD [  "npm", "run", "start:migrate:prod" ]
