@@ -33,3 +33,6 @@ spec:
             secretKeyRef:
               name: max-tech-secrets
               key: POSTGRES_DB
+        - name: POSTGRES_HOST  
+          value: postgres  
+
