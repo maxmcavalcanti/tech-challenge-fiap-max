@@ -1,0 +1,14 @@
+# postgres-nodeport-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-nodeport-service
+spec:
+  selector:
+    app: postgres
+  ports:
+    - protocol: TCP
+      port: 5432  # Port used by the service
+      targetPort: 5432  # Port exposed by the Pods (PostgreSQL default port)
+      nodePort: 31099  # Specify the desired port number
+  type: NodePort

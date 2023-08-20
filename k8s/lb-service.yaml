@@ -1,0 +1,16 @@
+# EXEMPLO DE LOADBALANCER - NÃO SERÁ UTILIZADO - SERÁ UTILIZADO NODEPORT LOCAL
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-loadbalancer-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb  
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing 
+spec:
+  selector:
+    app: your-application
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

@@ -16,8 +16,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: tech_postgres_db
+    secrets:
+      - max-tech-secrets
+    env_file:
+      - ./secrets.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+secrets:
+  max-tech-secrets:
+    external: true
 volumes:
   postgres_data:
