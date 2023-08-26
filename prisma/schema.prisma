@@ -44,7 +44,11 @@ model Pedido {
   clienteId       String
   metodoPagamento String
   status          String
+  statusPagamento String       @default("")
   produtos        ItemPedido[]
+  numeroPedido    Int          @default(autoincrement())
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 }
 
 model ItemPedido {

@@ -3,6 +3,7 @@ import clienteRoutes from './infraestructure/routes/cliente.routes'
 import funcionarioRoutes from './infraestructure/routes/funcionario.routes'
 import pedidoRoutes from './infraestructure/routes/pedido.routes'
 import produtoRoutes from './infraestructure/routes/produto.routes'
+import webhookRoutes from './infraestructure/routes/webhook.routes'
 import swaggerConfig from './../swaggerConfig'
 import router from './infraestructure/routes/router'
 
@@ -16,6 +17,7 @@ app.use(clienteRoutes)
 app.use(funcionarioRoutes)
 app.use(produtoRoutes)
 app.use(pedidoRoutes)
+app.use(webhookRoutes)
 // Configuração das rotas
 app.get('/', (req, res) => {
   res.send('Bem-vindo à API da Lanchonete!')

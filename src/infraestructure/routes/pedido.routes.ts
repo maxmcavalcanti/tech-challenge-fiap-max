@@ -159,4 +159,7 @@ router.delete('/pedidos/:id', pedidoController.remove);
  */
 router.put('/pedidos/:id/status', pedidoController.changeStatus);
 
+router.get('/pedidos/:id/status-pagamento', pedidoController.getPaymentStatus);
+
+
 export default router;
