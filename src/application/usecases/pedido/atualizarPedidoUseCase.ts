@@ -1,11 +1,13 @@
+import { ItemPedido } from "../../../domain/entities/itemPedido";
 import { Pedido } from "../../../domain/entities/pedido";
-import PedidoRepository from "../../../interfaces/repositories/pedido.repository";
+import { PedidoRepository } from "../../../interfaces/repositories/pedido.repository.interface";
+import { Pedido as PedidoPrisma } from '@prisma/client';
 
 class AtualizarPedidoUseCase {
     constructor(private pedidoRepository: PedidoRepository) { }
 
-    async execute(id: string, pedidoData: Partial<Pedido>): Promise<Pedido | null> {
-        const pedido = await this.pedidoRepository.atualizarPedido(id, pedidoData);
+    async execute(id: string, produtos: ItemPedido[]): Promise<any> {
+        const pedido = await this.pedidoRepository.atualizarPedido(id, produtos);
         return pedido;
     }
 }

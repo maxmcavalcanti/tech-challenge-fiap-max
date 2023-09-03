@@ -1,12 +1,13 @@
 import { Produto } from "../../../domain/entities/produto";
 import { ProdutoRepository } from "../../../interfaces/repositories/produto.repository.interface";
 
-class RemoverProdutoUseCase {
+class BuscarProdutosUseCase {
     constructor(private produtoRepository: ProdutoRepository) { }
 
-    async execute(id: string): Promise<void> {
-        const produto = await this.produtoRepository.removerProduto(id);
+    async execute(): Promise<Produto[] | null> {
+        const produtos = await this.produtoRepository.obterProdutos();
+        return produtos
     }
 }
 
-export default RemoverProdutoUseCase;
+export default BuscarProdutosUseCase;

@@ -2,11 +2,11 @@ import { Cliente } from "../../../domain/entities/cliente";
 import { ClienteRepository } from "../../../interfaces/repositories/cliente.repository.interface";
 
 
-export class EditarClienteUseCase {
+export class ObterClientePorCPFUseCase {
   constructor(private clienteRepository: ClienteRepository) { }
 
-  async execute(id: string, clienteData: Cliente): Promise<Cliente> {
-    const cliente = await this.clienteRepository.editarCliente(id, clienteData);
+  async execute(CPF: string): Promise<Cliente | null> {
+    const cliente = await this.clienteRepository.obterClientePorCPF(CPF);
     return cliente;
   }
 }

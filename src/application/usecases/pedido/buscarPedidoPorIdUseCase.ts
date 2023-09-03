@@ -1,14 +1,12 @@
 import { Pedido } from "../../../domain/entities/pedido";
 import { PedidoRepository } from "../../../interfaces/repositories/pedido.repository.interface";
 
-
-class RemoverPedidoUseCase {
+class BuscarPedidoPorIdUseCase {
     constructor(private pedidoRepository: PedidoRepository) { }
 
     async execute(id: string): Promise<Pedido | null> {
-        const pedido = await this.pedidoRepository.removerPedido(id);
+        const pedido = await this.pedidoRepository.obterPedidoPorId(id)
         return pedido;
     }
 }
-
-export default RemoverPedidoUseCase;
+export default BuscarPedidoPorIdUseCase

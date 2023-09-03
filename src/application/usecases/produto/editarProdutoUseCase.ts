@@ -1,5 +1,6 @@
-import ProdutoRepository from '../../../interfaces/repositories/produto.repository';
-import { Produto } from '../../../domain/entities/produto';
+import { Produto } from "../../../domain/entities/produto";
+import { ProdutoRepository } from "../../../interfaces/repositories/produto.repository.interface";
+
 
 class EditarProdutoUseCase {
   constructor(private produtoRepository: ProdutoRepository) { }

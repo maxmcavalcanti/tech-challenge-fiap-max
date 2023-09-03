@@ -1,5 +1,4 @@
-import { ItemPedido } from "@prisma/client";
-import { randomUUID } from "crypto";
+import { ItemPedido } from "./itemPedido";
 
 export class Pedido {
     public clienteId: string;

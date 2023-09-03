@@ -1,7 +1,5 @@
-import { randomUUID } from 'crypto'
-
 export class Funcionario {
-  public id: string
+  public id: string | null
   public nome: string
   public email: string
   public senha: string
@@ -10,9 +8,9 @@ export class Funcionario {
     nome: string,
     email: string,
     senha: string,
-    id: string,
+    id: string
   ) {
-    this.id = id ?? randomUUID()
+    this.id = id
     this.nome = nome
     this.email = email
     this.senha = senha

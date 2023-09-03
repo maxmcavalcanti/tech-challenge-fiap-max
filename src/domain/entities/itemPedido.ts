@@ -1,4 +1,3 @@
-import { Produto } from "./produto";
 
 export class ItemPedido {
     public produtoId: string;
