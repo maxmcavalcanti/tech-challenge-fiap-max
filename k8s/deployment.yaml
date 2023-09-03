@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: application-deployment
+  name: max-tech-app-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: your-application
+      app: max-tech-app
   template:
     metadata:
       labels:
-        app: your-application
+        app: max-tech-app
     spec:
       containers:
-      - name: your-application
+      - name: max-tech-app
         image: maxmcavalcanti/max-tech-app:latest
         ports:
         - containerPort: 80
@@ -34,5 +34,6 @@ spec:
               name: max-tech-secrets
               key: POSTGRES_DB
         - name: POSTGRES_HOST  
-          value: postgres  
+          value: postgres
+        imagePullPolicy: Always
 
